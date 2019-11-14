@@ -4,14 +4,15 @@ const massive = require ('massive')
 const app = express()
 const session = require ('express-session')
 const {SERVER_PORT,CONNECTION_STRING,SECRET} = process.env
-app.use(express.json())
 const studCtrl = require('./controller/studController')
-
+const teachCtrl = require('./controller/teachController')
 
 app.post('/auth/student',studCtrl.registerStudent)
-app.post('/auth/studentlogin',studCtrl.loginstudent)
+app.post('/auth/studentlogin',studCtrl.loginStudent)
+app.post('/auth/teacher',teachCtrl.registerTeacher)
+app.post('/auth/teacherlogin',teachCtrl.loginTeacher)
 
-
+app.use(express.json())
 app.use(
     session({
         secret: SECRET,
