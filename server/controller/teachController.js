@@ -3,20 +3,21 @@ const bcrypt = require("bcryptjs");
 module.exports = {
   async registerTeacher(req, res) {
     const db = req.app.get("db");
-    const { name, email, phone, img, password } = req.body;
+    const { name, subject, email, phone, img, password } = req.body;
     const teacher = await db.find_teacher_email(email);
     if (teacher[0])
       return res.status(200).send({ message: "Email already in use" });
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
     const newTeacher = await db
-      .add_teacher({ name, email, phone, img, hash })
+      .add_teacher({ name, subject, email, phone, img, hash })
       .catch(err => {
         return res.sendStatus(503);
       });
     req.session.teacher = {
       teacherId: newTeacher[0].teacher_id,
       name,
+      subject,
       email,
       phone,
       img,
