@@ -12,8 +12,8 @@ const initialState = {
 };
 
 //Action constants
-SET_STUDENTS = "SET_STUDENT";
-GET_ALL_STUDENTS = "GET_ALL_STUDENTS";
+const SET_STUDENT = "SET_STUDENT";
+const GET_ALL_STUDENTS = "GET_ALL_STUDENTS";
 
 //Action Builders
 
