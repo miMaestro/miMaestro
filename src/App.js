@@ -1,13 +1,16 @@
 import React from 'react';
 import Header from './components/Header'
-import routes from './routes'
+import StudRoutes from './Routes/StudRoutes'
+import TeachRoutes from './Routes/TeachRoutes'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
     <Header/>
-     {routes}
+     {StudRoutes}
+     {TeachRoutes}
+
     </div>
   );
 }

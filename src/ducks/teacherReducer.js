@@ -15,9 +15,9 @@ const initialState = {
 };
 
 //Action Constants
-SET_TEACHER = " SET_TEACHER";
-GET_ALL_TEACHERS = "GET_ALL_TEACHERS";
-GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES";
+const SET_TEACHER = " SET_TEACHER";
+const GET_ALL_TEACHERS = "GET_ALL_TEACHERS";
+const GET_ALL_CATEGORIES = "GET_ALL_CATEGORIES";
 
 //Action Builders
 
@@ -44,7 +44,7 @@ export function getCategories(categories) {
 
 //Reducer Function
 
-export default function teacherReducer(state = initialState) {
+export default function teacherReducer(state = initialState,action) {
   const { type, payload } = action;
   switch (type) {
     case SET_TEACHER:
