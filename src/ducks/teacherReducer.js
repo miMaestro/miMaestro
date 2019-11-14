@@ -53,5 +53,8 @@ export default function teacherReducer(state = initialState,action) {
       return { ...state, allTeachers: payload };
     case GET_ALL_CATEGORIES:
       return { ...state, categories: payload };
+      default:
+        return state
+
   }
 }

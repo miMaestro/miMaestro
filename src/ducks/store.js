@@ -1,6 +1,6 @@
 import { createStore, combineReducers} from "redux";
-import studentReducer from "./studentReducer";
-import teacherReducer from "./teacherReducer";
+import studentReducer from "../ducks/studentReducer";
+import teacherReducer from "../ducks/teacherReducer";
 
 const rootReducer = combineReducers({
     studentReducer,
