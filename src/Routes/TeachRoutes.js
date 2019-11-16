@@ -6,7 +6,7 @@ import VideoChat from '../components/VideoChat'
 
 export default (
     <Switch>
-    <Route exact path='/' component={Dashboard}/>
+    <Route exact path='/teacher' component={Dashboard}/>
     <Route path='/Chat' component={Chat}/>
     <Route path='/VideoChat' component={VideoChat}/>
     </Switch>

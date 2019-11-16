@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 
 module.exports = {
   async registerStudent(req, res) {
+    console.log(req.body)
     const db = req.app.get("db");
     const { name, email, phone, img, password } = req.body;
     const student = await db.find_email(email);

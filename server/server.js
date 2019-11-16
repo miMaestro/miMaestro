@@ -6,13 +6,8 @@ const session = require ('express-session')
 const {SERVER_PORT,CONNECTION_STRING,SECRET} = process.env
 const studCtrl = require('./controller/studController')
 const teachCtrl = require('./controller/teachController')
-
-app.post('/auth/student',studCtrl.registerStudent)
-app.post('/auth/studentlogin',studCtrl.loginStudent)
-app.post('/auth/teacher',teachCtrl.registerTeacher)
-app.post('/auth/teacherlogin',teachCtrl.loginTeacher)
-
 app.use(express.json())
+
 app.use(
     session({
         secret: SECRET,
@@ -20,6 +15,11 @@ app.use(
         saveUninitialized: true, 
     })
     )
+
+app.post('/auth/student',studCtrl.registerStudent)
+app.post('/auth/studentlogin',studCtrl.loginStudent)
+app.post('/auth/teacher',teachCtrl.registerTeacher)
+app.post('/auth/teacherlogin',teachCtrl.loginTeacher)
     massive(CONNECTION_STRING)
     .then(dbInstance => {
         app.set("db", dbInstance)

@@ -11,9 +11,9 @@ CREATE TABLE "students" (
 );
 
 
-INSERT INTO students (name, email,img, phone, hash)
-VALUES (${name}, ${email}, ${img}, ${phone}, ${hash} )
-RETURNING student_id;
+-- INSERT INTO students (name, email,img, phone, hash)
+-- VALUES (${name}, ${email}, ${img}, ${phone}, ${hash} )
+-- RETURNING student_id;
 
 
 CREATE TABLE "teachers" (
@@ -36,7 +36,11 @@ VALUES ('Mr. Feeny', 'History', 'feeny@gmail.com', '555-555-5555', 'https://tvgu
        ('Mr. Miyagi', 'Karate', 'waxon@gmail.com', '123-456-7890', 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Pat-Morita_%28Karate_Kid%29.jpg/250px-Pat-Morita_%28Karate_Kid%29.jpg', 'hash2'),
        ('Detective John Kimble', 'Kindergarten', 'get2thechopper@gmail.com', '098-765-4321', 'https://i.pinimg.com/originals/4c/19/07/4c190787ab5119a2e8f58c1aced093c9.jpg', 'hash3'),
        ('Miss Krabappel', '4th Grade', 'krab@simpsons.com', '135-792-4680', 'https://i.ytimg.com/vi/6MDNF0_wJO8/hqdefault.jpg', 'hash4');
-	
+INSERT INTO students (name,email,phone,img,hash)	
+VALUES ('elise', 'elise@gmail.com', '555-555-5555', 'https://images.unsplash.com/photo-1573844874632-733b0d7dc163?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' 'elise' )
+('aaron', 'aaron@gmail.com', '555-555-5555', 'https://images.unsplash.com/photo-1573845095355-111369d00bde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' 'aaron' )
+('sara', 'sara@gmail.com', '555-555-5555', 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' 'sara' )
+('alli', 'alli@gmail.com', '555-555-5555', 'https://images.unsplash.com/photo-1566807810030-3eaa60f3e670?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' 'alli' )
     
 
 
